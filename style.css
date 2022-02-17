@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dots-width : 70px;
+    --dots-height : 70px;
+    --dots-width-active : 200px;
+    --dots-height-active : 200px;
+    --icon-dots-width : 7px;
+    --icon-dots-height : 7px;
+    --icon-dots-width-active : 40px;
+    --icon-dots-height-active : 40px;
+    --move-icon-dots : 12px;
+    --move-icon-dots-active : 60px;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: rgb(40, 45, 54, .8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dots-container {
+    background-color: rgb(27, 25, 25, .6);
+    width: var(--dots-width);
+    height: var(--dots-height);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all .5s;
+    transition-delay: .8s;
+}
+
+.dots-container.active {
+    width: var(--dots-width-active);
+    height: var(--dots-height-active);
+    transition-delay: 0s;
+}
+
+.dots-container .icon-button {
+    width: var(--icon-dots-width);
+    height: var(--icon-dots-height);
+    position: absolute;
+    border-radius: 50%;
+    background-color: aliceblue;
+    color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate( calc( var(--move-icon-dots) * var(--x) ), calc( var(--move-icon-dots) * var(--y) ) );
+    transition: all .5s;
+    transition-delay: calc( 0.1s * var(--i) );
+}
+
+.dots-container .icon-button ion-icon{
+    font-size: 0em;
+    transition: 0.5s;
+}
+
+.dots-container.active .icon-button ion-icon{
+    font-size: 1.5em;
+}
+
+.dots-container.active .icon-button:hover ion-icon{
+    color: aqua;
+    filter: drop-shadow( 0 0 2px #2dfc52), drop-shadow( 0 0 5px #2dfc52), drop-shadow( 0 0 15px #2dfc52);
+}
+
+
+/* .dots-container .icon-button[data-x="-1"][data-y="0"]{
+    transform: translate( calc( var(--move-icon-dots) * -1 ), calc( var(--move-icon-dots) * 0 ) );
+}
+
+.dots-container .icon-button[data-x="0"][data-y="-1"]{
+    transform: translate( calc( var(--move-icon-dots) * 0 ), calc( var(--move-icon-dots) * -1 ) );
+}
+
+.dots-container .icon-button[data-x="1"][data-y="0"]{
+    transform: translate( calc( var(--move-icon-dots) * 1 ), calc( var(--move-icon-dots) * 0 ) );
+}
+
+.dots-container .icon-button[data-x="0"][data-y="1"]{
+    transform: translate( calc( var(--move-icon-dots) * 0 ), calc( var(--move-icon-dots) * 1 ) );
+}
+
+.dots-container .icon-button[data-x="-1"][data-y="-1"]{
+    transform: translate( calc( var(--move-icon-dots) * -1 ), calc( var(--move-icon-dots) * -1 ) );
+}
+
+.dots-container .icon-button[data-x="1"][data-y="1"]{
+    transform: translate( calc( var(--move-icon-dots) * 1 ), calc( var(--move-icon-dots) * 1 ) );
+}
+
+.dots-container .icon-button[data-x="1"][data-y="-1"]{
+    transform: translate( calc( var(--move-icon-dots) * 1 ), calc( var(--move-icon-dots) * -1 ) );
+}
+
+.dots-container .icon-button[data-x="-1"][data-y="1"]{
+    transform: translate( calc( var(--move-icon-dots) * -1 ), calc( var(--move-icon-dots) * 1 ) );
+} */
+
+.dots-container.active .icon-button {
+    width: var(--icon-dots-width-active);
+    height: var(--icon-dots-height-active);
+    background-color: rgb(62, 59, 59);
+    transform: translate( calc( var(--move-icon-dots-active) * var(--x) ), calc( var(--move-icon-dots-active) * var(--y) ) );
+}
